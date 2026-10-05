@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Client Reviews | Sumit</title>
+
+    <style>
+        /* =========================
+           REVIEWS PAGE
+        ========================= */
+
+        .reviews-page {
+            min-height: 80vh;
+            padding: 80px 7%;
+            background: #08051a;
+        }
+
+        .reviews-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .reviews-header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .reviews-header p {
+            color: #aaa5bc;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* REVIEW GRID */
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        /* REVIEW CARD */
+
+        .review-card {
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.25s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(167, 139, 250, 0.35);
+        }
+
+        .stars {
+            color: #facc15;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .review-text {
+            color: #ddd8ef;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .review-author {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding-top: 18px;
+        }
+
+        .review-author strong {
+            display: block;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .review-author span {
+            color: #aaa5bc;
+            font-size: 13px;
+        }
+
+        /* EMPTY STATE */
+
+        .empty-reviews {
+            text-align: center;
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 55px 25px;
+        }
+
+        .empty-reviews h2 {
+            margin-bottom: 10px;
+        }
+
+        .empty-reviews p {
+            color: #aaa5bc;
+            max-width: 500px;
+            margin: 0 auto 25px;
+        }
+
+        /* CTA */
+
+        .review-cta {
+            margin-top: 60px;
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 45px 30px;
+            text-align: center;
+        }
+
+        .review-cta h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .review-cta p {
+            color: #aaa5bc;
+            margin-bottom: 25px;
+        }
+
+        .review-button {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .review-button:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        /* FORM */
+
+        .review-form-section {
+            margin-top: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        .review-form-section h2 {
+            margin-bottom: 8px;
+        }
+
+        .review-form-section>p {
+            color: #aaa5bc;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ddd8ef;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0c0822;
+            color: white;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #7c3aed;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* RATING */
+
+        .rating {
+            display: flex;
+            gap: 5px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 30px;
+            color: #45405c;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .rating label:hover,
+        .rating label:hover~label,
+        .rating input:checked~label {
+            color: #facc15;
+        }
+
+        /* CONSENT */
+
+        .consent {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            color: #aaa5bc;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .consent input {
+            margin-top: 4px;
+            accent-color: #7c3aed;
+        }
+
+        .submit-review {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #7c3aed;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-review:hover {
+            background: #6d28d9;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .reviews-page {
+                padding: 55px 5%;
+            }
+
+            .reviews-header h1 {
+                font-size: 32px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-form-section {
+                padding: 25px 20px;
+            }
+
+            .review-cta {
+                padding: 35px 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            SUMIT
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="projects.html">Projects</a>
+
+            <a href="about.html">About Me</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="reviews.html">Reviews</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- REVIEWS -->
+
+    <main class="reviews-page">
+
+        <!-- HEADER -->
+
+        <div class="reviews-header">
+            <h1>Client Reviews</h1>
+
+            <p>
+                Real feedback from people I've worked with.
+                Your experience and honest feedback matter.
+            </p>
+        </div>
+
+
+        <!-- REVIEWS GRID -->
+
+        <div class="reviews-grid"></div>
+
+
+        <!-- IMPORTANT NOTE -->
+
+        <div class="empty-reviews" style="display: none;">
+
+            <h2>No reviews yet</h2>
+
+            <p>
+                Be the first client to share your experience
+                working with me.
+            </p>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="review-cta">
+
+            <h2>Worked With Me?</h2>
+
+            <p>
+                I'd love to hear about your experience.
+                Your honest feedback helps me improve.
+            </p>
+
+            <a href="#review-form" class="review-button">
+                Leave a Review
+            </a>
+
+        </div>
+
+
+        <!-- REVIEW FORM -->
+
+        <section class="review-form-section" id="review-form">
+
+            <h2>Share Your Experience</h2>
+
+            <p>
+                This form is for clients who have actually
+                worked with me.
+            </p>
+
+
+            <form>
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input type="text" id="name" placeholder="Your name" required>
+
+                </div>
+
+
+                <!-- BUSINESS -->
+
+                <div class="form-group">
+
+                    <label for="business">
+                        Business / Company
+                    </label>
+
+                    <input type="text" id="business" placeholder="Business name">
+
+                </div>
+
+
+                <!-- RATING -->
+
+                <div class="form-group">
+
+                    <label>
+                        Your Rating
+                    </label>
+
+                    <div class="rating">
+
+                        <input type="radio" name="rating" id="star5" value="5" required>
+                        <label for="star5">★</label>
+
+                        <input type="radio" name="rating" id="star4" value="4">
+                        <label for="star4">★</label>
+
+                        <input type="radio" name="rating" id="star3" value="3">
+                        <label for="star3">★</label>
+
+                        <input type="radio" name="rating" id="star2" value="2">
+                        <label for="star2">★</label>
+
+                        <input type="radio" name="rating" id="star1" value="1">
+                        <label for="star1">★</label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVIEW -->
+
+                <div class="form-group">
+
+                    <label for="review">
+                        Your Review
+                    </label>
+
+                    <textarea id="review" placeholder="Tell me about your experience..." required></textarea>
+
+                </div>
+
+
+                <!-- CONSENT -->
+
+                <label class="consent">
+
+                    <input type="checkbox" required>
+
+                    <span>
+                        I agree that my name, business name and
+                        review may be displayed publicly on this website.
+                    </span>
+
+                </label>
+
+
+                <button type="submit" class="submit-review">
+                    Submit Review
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Sumit. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="js/reviews.js"></script>
+
+</body>
+
+</html>

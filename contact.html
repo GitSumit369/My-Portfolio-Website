@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Sumit</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #08051a;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            background: rgba(12, 7, 35, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 7%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #a78bfa;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #d9d6e8;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-page {
+            min-height: calc(100vh - 80px);
+            padding: 80px 7%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info {
+            max-width: 650px;
+        }
+
+        .small-heading {
+            color: #a78bfa;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info h1 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .contact-info h1 span {
+            color: #a78bfa;
+        }
+
+        .contact-info p {
+            color: #aaa5bc;
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .contact-points {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-point {
+            color: #d9d6e8;
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px 18px;
+            border-radius: 10px;
+        }
+
+        .contact-form {
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 35px;
+            border-radius: 16px;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #d9d6e8;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: #0c0822;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 13px 14px;
+            font-family: inherit;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #7c3aed;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            background: #7c3aed;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #05030f;
+            padding: 30px 7%;
+            text-align: center;
+            color: #777286;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+            .contact-page {
+                grid-template-columns: 1fr;
+                padding: 70px 5%;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .contact-page {
+                padding: 60px 5%;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+        <nav>
+            <div class="logo">
+                SUMIT
+            </div>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About Me</a>
+                <a href="contact.html">Contact</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <main>
+        <section class="contact-page">
+
+            <div class="contact-info">
+
+                <p class="small-heading">
+                    LET'S WORK TOGETHER
+                </p>
+
+                <h1>
+                    Have a business <span>problem?</span>
+                </h1>
+
+                <p>
+                    Tell me what your business is struggling with.
+                    We can discuss the problem first and decide whether
+                    technology can actually make things easier.
+                </p>
+
+                <div class="contact-points">
+                    <div class="contact-point">
+                        💡 Business problem or idea
+                    </div>
+
+                    <div class="contact-point">
+                        🌐 Website or web application
+                    </div>
+
+                    <div class="contact-point">
+                        ⚙️ Business automation
+                    </div>
+
+                    <div class="contact-point">
+                        🤖 AI-powered solution
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <h2>Tell Me About It</h2>
+
+                <form>
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" placeholder="Enter your business name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business-type">Business Type</label>
+                        <input type="text" id="business-type" name="business-type"
+                            placeholder="e.g. Dental clinic, shop, agency">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Phone / Email</label>
+                        <input type="text" id="contact" name="contact" placeholder="How can I contact you?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">What do you need?</label>
+                        <textarea id="message" name="message"
+                            placeholder="Describe your requirement or business problem..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Send Inquiry
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <p>
+            © 2026 Sumit. All rights reserved.
+        </p>
+    </footer>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

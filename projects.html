@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Sumit's Portfolio - Projects</title>
+</head>
+
+<body>
+
+    <section class="projects">
+
+        <div class="section-heading">
+
+            <h2>
+                Featured Project
+            </h2>
+               <a href="https://github.com/GitSumit369" target="_blank" rel="noopener noreferrer" style="
+        display: inline-block;
+        padding: 12px 22px;
+        background: transparent;
+        color: #c4b5fd;
+        border: 1px solid #7c3aed;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.3s ease;
+    ">
+                View on GitHub →
+            </a>
+
+            <p>
+                A look at how I approach real-world business problems.
+            </p>
+
+        </div>
+        
+
+
+        <!-- PROJECT CARD -->
+
+        <div
+            class="project-card"
+            style="
+                overflow: hidden;
+            "
+        >
+
+
+            <!-- PROJECT PREVIEW -->
+
+            <div
+                class="project-preview"
+                style="
+                    height: auto !important;
+                    min-height: 0 !important;
+                    overflow: hidden;
+                    padding: 0;
+                "
+            >
+
+                <img
+                    src="assets/project_preview1.png"
+                    alt="Sahyog Caring Bureau Website Preview"
+                    class="project-image"
+                    style="
+                        display: block;
+                        width: 100% !important;
+                        height: auto !important;
+                        max-width: 100%;
+                        object-fit: contain !important;
+                        object-position: center;
+                        margin: 0;
+                    "
+                >
+
+            </div>
+
+
+            <!-- PROJECT CONTENT -->
+
+            <div
+                class="project-content"
+                style="
+                    position: static !important;
+                    transform: none !important;
+                    margin: 0;
+                "
+            >
+
+                <h3>
+                    Sahyog Caring Bureau
+                </h3>
+
+
+                <p>
+                    A caretaker support platform designed to help families
+                    find suitable care based on their needs. Families can
+                    submit their requirements, discuss care options with the
+                    Sahyog team, and get support for elderly care, patient
+                    care, recovery, bedridden care, and short or long-term
+                    assistance.
+                </p>
+
+
+                <p style="
+                    margin-top: 12px;
+                    color: #aaa5bc;
+                ">
+                    The platform also includes a care guide, direct enquiry
+                    system, callback support, and a “Talk to Sahyog”
+                    assistant with a responsive interface for mobile and
+                    desktop.
+                </p>
+
+
+                <!-- WHAT IT DOES -->
+
+                <div
+                    style="
+                        margin-top: 20px;
+                        padding: 18px;
+                        background: #0c0822;
+                        border: 1px solid rgba(167, 139, 250, 0.12);
+                        border-radius: 12px;
+                    "
+                >
+
+                    <h4 style="
+                        margin: 0 0 14px 0;
+                        color: #c4b5fd;
+                        font-size: 18px;
+                    ">
+                        What It Does
+                    </h4>
+
+
+                    <div style="
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 10px 20px;
+                    ">
+
+                        <span style="color: #aaa5bc;">
+                            ✓ Elderly & Patient Care
+                        </span>
+
+                        <span style="color: #aaa5bc;">
+                            ✓ Recovery & Bedridden Care
+                        </span>
+
+                        <span style="color: #aaa5bc;">
+                            ✓ Day & 24-Hour Care
+                        </span>
+
+                        <span style="color: #aaa5bc;">
+                            ✓ Requirement-Based Enquiry
+                        </span>
+
+                        <span style="color: #aaa5bc;">
+                            ✓ Direct Inquiry & Callback
+                        </span>
+
+                        <span style="color: #aaa5bc;">
+                            ✓ Talk to Sahyog Assistant
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TECH -->
+
+                <p style="
+                    margin-top: 18px;
+                    color: #aaa5bc;
+                    font-size: 14px;
+                ">
+
+                    <strong style="color: #c4b5fd;">
+                        Tech:
+                    </strong>
+
+                    HTML, Tailwind CSS, JavaScript, Flask & MySQL
+
+                </p>
+
+
+                <!-- VIEW PROJECT -->
+
+                <a
+                    href="assets/project_preview1.html"
+                    target="_blank"
+                    class="project-link"
+                    style="
+                        display: inline-block;
+                        margin-top: 8px;
+                    "
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- INLINE MOBILE FIX -->
+
+    <style>
+
+        @media (max-width: 650px) {
+
+            .project-card {
+                display: block !important;
+            }
+
+            .project-preview {
+                width: 100% !important;
+            }
+
+            .project-image {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+
+            .project-content {
+                width: 100% !important;
+                box-sizing: border-box;
+            }
+
+            .project-content div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+
+        }
+
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Sumit</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #08051a;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            background: rgba(12, 7, 35, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 7%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #a78bfa;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #d9d6e8;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-page {
+            min-height: calc(100vh - 80px);
+            padding: 70px 7%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-info {
+            max-width: 650px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #c4b5fd;
+            border: 1px solid rgba(167, 139, 250, 0.35);
+            padding: 9px 16px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .small-heading {
+            color: #a78bfa;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .about-info h1 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .about-info h1 span {
+            color: #a78bfa;
+        }
+
+        .about-info p {
+            color: #aaa5bc;
+            font-size: 18px;
+            max-width: 620px;
+            margin-bottom: 18px;
+        }
+
+        .about-card {
+            background: #12102c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 25px;
+        }
+
+        .about-card h2 {
+            color: #c4b5fd;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #05030f;
+            padding: 30px 7%;
+            text-align: center;
+            color: #777286;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .about-page {
+                grid-template-columns: 1fr;
+                padding: 60px 5%;
+                gap: 40px;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .about-image img {
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .about-page {
+                padding: 50px 5%;
+            }
+
+            .about-info h1 {
+                font-size: 42px;
+            }
+
+            .about-info p {
+                font-size: 16px;
+            }
+
+            .about-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+        <nav>
+            <div class="logo">
+                SUMIT
+            </div>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About Me</a>
+                <a href="contact.html">Contact</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         ABOUT ME
+    ========================== -->
+
+    <main>
+
+        <section class="about-page">
+
+            <!-- LEFT SIDE -->
+
+            <div class="about-info">
+
+                <a href="/" class="back-btn">
+                    ← Back to Home
+                </a>
+
+                <p class="small-heading">
+                    A LITTLE ABOUT ME
+                </p>
+
+                <h1>
+                    Hi, I'm <span>Sumit.</span>
+                </h1>
+
+                <p>
+                    My name is Sumit. I'm a BSc IT student interested
+                    in web development and software development.
+                </p>
+
+                <p>
+                    I enjoy learning new technologies by building real
+                    projects and understanding how things work behind
+                    the scenes.
+                </p>
+
+                <div class="about-card">
+
+                    <h2>What I'm Learning</h2>
+
+                    <p>
+                        Currently, I'm exploring Python, backend
+                        development and DSA while continuing to improve
+                        my development skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="about-image">
+
+                <img
+                    src="assets/aboutpage.png"
+                    alt="About Me Illustration"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <p>
+            © 2026 Sumit. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>
