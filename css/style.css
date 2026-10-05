@@ -40,6 +40,7 @@ select {
 
 /* =========================================================
    NAVBAR
+   Used on index.html
 ========================================================= */
 
 nav {
@@ -60,12 +61,10 @@ nav {
     backdrop-filter: blur(10px);
 }
 
-.logo {
-    color: #a78bfa;
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    white-space: nowrap;
+.logo img {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -685,40 +684,13 @@ footer {
         overflow-x: hidden;
     }
 
-    /* NAVBAR */
 
-    nav {
-        padding: 16px 5%;
-
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .logo {
-        font-size: 21px;
-        letter-spacing: 1px;
-    }
-
-    .nav-links {
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 16px;
-
-        flex-wrap: wrap;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
         min-height: auto;
-
         padding: 75px 5%;
     }
 
@@ -753,7 +725,9 @@ footer {
     }
 
 
-    /* SECTIONS */
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
 
     section {
         padding: 65px 5%;
@@ -772,7 +746,9 @@ footer {
     }
 
 
-    /* SERVICES */
+    /* =====================================================
+       SERVICES
+    ===================================================== */
 
     .service-grid {
         grid-template-columns: 1fr;
@@ -784,7 +760,9 @@ footer {
     }
 
 
-    /* PROBLEM */
+    /* =====================================================
+       PROBLEM
+    ===================================================== */
 
     .problem-box {
         padding: 28px 22px;
@@ -811,7 +789,9 @@ footer {
     }
 
 
-    /* PROJECTS */
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
 
     .project-preview {
         min-height: auto;
@@ -831,7 +811,9 @@ footer {
     }
 
 
-    /* ABOUT */
+    /* =====================================================
+       ABOUT
+    ===================================================== */
 
     .about {
         grid-template-columns: 1fr;
@@ -847,7 +829,9 @@ footer {
     }
 
 
-    /* HOMEPAGE REVIEWS */
+    /* =====================================================
+       HOMEPAGE REVIEWS
+    ===================================================== */
 
     .review-note {
         font-size: 15px;
@@ -859,7 +843,9 @@ footer {
     }
 
 
-    /* REVIEWS PAGE */
+    /* =====================================================
+       REVIEWS PAGE
+    ===================================================== */
 
     .reviews-page {
         padding: 65px 5%;
@@ -883,7 +869,9 @@ footer {
     }
 
 
-    /* REVIEW FORM */
+    /* =====================================================
+       REVIEW FORM
+    ===================================================== */
 
     .review-form-section {
         margin-top: 40px;
@@ -896,7 +884,9 @@ footer {
     }
 
 
-    /* PAGINATION */
+    /* =====================================================
+       PAGINATION
+    ===================================================== */
 
     .reviews-pagination {
         gap: 6px;
@@ -909,7 +899,9 @@ footer {
     }
 
 
-    /* CONTACT */
+    /* =====================================================
+       CONTACT
+    ===================================================== */
 
     .contact h2 {
         font-size: 32px;
@@ -925,7 +917,9 @@ footer {
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
         padding: 25px 5%;
@@ -935,109 +929,153 @@ footer {
 
 
 /* =========================================================
-   SMALL PHONES
+   MOBILE HAMBURGER NAVBAR
+   ONLY USED WHEN NAVBAR EXISTS — index.html
 ========================================================= */
 
-@media (max-width: 400px) {
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .hero {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    #element {
-        font-size: 18px;
-    }
-
-    section {
-        padding: 55px 5%;
-    }
-
-    .section-heading h2 {
-        font-size: 27px;
-    }
-
-    .service-card {
-        padding: 20px;
-    }
-
-    .problem-box {
-        padding: 23px 18px;
-    }
-
-    .problem-box h2 {
-        font-size: 25px;
-    }
-
-    .project-content {
-        padding: 20px;
-    }
-
-    .about-box {
-        padding: 22px;
-    }
-
-    .review-card {
-        padding: 20px;
-    }
-
-    .review-form-section {
-        padding: 22px 17px;
-    }
-
-    .contact h2 {
-        font-size: 29px;
-    }
+.menu-toggle {
+    display: none;
 }
-/* =========================================================
-   NAVBAR MOBILE FIX
-========================================================= */
 
 @media (max-width: 700px) {
 
     nav {
-        flex-wrap: nowrap;
-        flex-direction: row;
+        position: sticky;
+        top: 0;
+
+        display: flex;
         align-items: center;
-        padding: 15px 5%;
-        gap: 10px;
+        justify-content: space-between;
+
+        padding: 12px 5%;
+        flex-wrap: nowrap;
     }
 
     .logo {
         flex-shrink: 0;
-        font-size: 20px;
     }
 
-    .nav-links {
-        width: auto;
-        margin-left: auto;
+    .logo img {
+        width: 100px !important;
+        height: 50px !important;
+        object-fit: contain;
+    }
 
+
+    /* =====================================================
+       HAMBURGER BUTTON
+    ===================================================== */
+
+    .menu-toggle {
         display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-end;
 
-        gap: 12px;
+        flex-direction: column;
+        gap: 5px;
+
+        margin-left: auto;
+        padding: 6px;
+
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+
+        width: 25px;
+        height: 2px;
+
+        background: #a78bfa;
+
+        transition: 0.3s ease;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU HIDDEN
+    ===================================================== */
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 10px 0 15px;
+
+        background: rgba(12, 7, 35, 0.98);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        z-index: 1001;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU OPEN
+    ===================================================== */
+
+    .nav-links.active {
+        display: flex;
     }
 
     .nav-links a {
-        font-size: 12px;
+        width: 100%;
+
+        padding: 12px 0;
+
+        text-align: center;
+
+        font-size: 15px;
+
         white-space: nowrap;
     }
+
+
+    /* =====================================================
+       HAMBURGER → X
+    ===================================================== */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+/* =========================================================
+   MOBILE HERO CARD FIX
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero > div:last-child {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        overflow: hidden;
+    }
+
+    .hero > div:last-child > div:last-child {
+        width: min(330px, 100%) !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
 }

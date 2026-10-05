@@ -1,18 +1,25 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const mobileMenuBtn = document.getElementById("mobile-menu");
+const navMenu = document.getElementById("nav-menu");
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Change icon based on state
-        menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+if (mobileMenuBtn && navMenu) {
+
+    mobileMenuBtn.addEventListener("click", function () {
+
+        this.classList.toggle("active");
+        navMenu.classList.toggle("active");
+
     });
 
-    // Close menu when a link is clicked (better mobile UX)
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuToggle.textContent = '☰';
+    const navLinks = navMenu.querySelectorAll("a");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenuBtn.classList.remove("active");
+            navMenu.classList.remove("active");
+
         });
+
     });
 }
